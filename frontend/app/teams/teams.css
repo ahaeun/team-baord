@@ -1,0 +1,124 @@
+.team-page-bg {
+  min-height: 100vh;
+  background: #eceef1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  height: fit-content;
+}
+
+.team-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-step {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.team-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-step-line {
+  flex: 1;
+  width: 2px;
+  background: #e5e7eb;
+  margin: 4px 0;
+  min-height: 24px;
+}
+
+.team-step-body {
+  padding-bottom: 28px;
+  flex: 1;
+}
+
+.team-step-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-step-title-row h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: #111827;
+  font-weight: normal
+}
+
+.team-step-edit {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.team-step-edit:hover {
+  color: #0c1320;
+}
+
+.team-step-date {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.team-delete-selected {
+  margin-top: 16px;
+  width: 100%;
+  border: 1px solid #dc2626;
+  background: #fff;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.team-delete-selected:hover {
+  background: #fef2f2;
+}
+
+.page-header h2 {
+  margin-block-start: 0.23em;
+  margin-block-end: 0.23em;
+}
+
+.projects-list {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 32px;
+  width: 70%;
+  max-width: 1280px;
+  height: fit-content;
+}
+
+.project-modal-btn {
+  grid-column: 1 / -1;
+  width: 200px;
+  text-align: center;
+  display: block !important;
+  height: 40px !important;
+  margin: 0 auto;
+}

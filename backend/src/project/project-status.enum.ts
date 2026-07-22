@@ -1,0 +1,5 @@
+export enum ProjectStatus {
+  IN_DEVELOPMENT = 'IN_DEVELOPMENT',
+  IN_OPERATION = 'IN_OPERATION',
+  CLOSED = 'CLOSED',
+}

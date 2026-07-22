@@ -1,0 +1,11 @@
+{
+  "name": "team-board",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm --prefix backend run start:dev\" \"npm --prefix frontend run dev\"",
+    "dev:debug": "concurrently -n backend,frontend -c blue,green \"npm --prefix backend run start:debug\" \"npm --prefix frontend run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
