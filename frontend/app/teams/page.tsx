@@ -15,8 +15,10 @@ export default function TeamsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
 
+  const refresh = () => fetchTeams().then(setTeams);
+
   useEffect(() => {
-    fetchTeams().then(setTeams);
+    refresh();
   }, []);
 
   const openCreateModal = () => {
@@ -36,18 +38,17 @@ export default function TeamsPage() {
 
   const handleSubmit = async (input: TeamInput) => {
     if (editingTeam) {
-      const updated = await updateTeam(editingTeam.id, input);
-      setTeams((prev) => prev.map((t) => (t.id === updated.id ? updated : t)));
+      await updateTeam(editingTeam.id, input);
     } else {
-      const created = await createTeam(input);
-      setTeams((prev) => [created, ...prev]);
+      await createTeam(input);
     }
+    await refresh();
     closeModal();
   };
 
   const handleDelete = async (team: Team) => {
     await deleteTeam(team.id);
-    setTeams((prev) => prev.filter((t) => t.id !== team.id));
+    await refresh();
     closeModal();
   };
 
@@ -65,7 +66,7 @@ export default function TeamsPage() {
 
   const handleBulkDelete = async () => {
     await Promise.all(Array.from(selectedIds).map((id) => deleteTeam(id)));
-    setTeams((prev) => prev.filter((t) => !selectedIds.has(t.id)));
+    await refresh();
     setSelectedIds(new Set());
   };
 

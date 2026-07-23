@@ -21,9 +21,11 @@ export default function TeamProjectsPage() {
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const refreshProjects = () => fetchProjectsByTeam(teamId).then(setProjects);
+
   useEffect(() => {
     fetchTeam(teamId).then(setTeam);
-    fetchProjectsByTeam(teamId).then(setProjects);
+    refreshProjects();
   }, [teamId]);
 
   const openCreateModal = () => {
@@ -43,18 +45,17 @@ export default function TeamProjectsPage() {
 
   const handleSubmit = async (input: ProjectInput) => {
     if (editingProject) {
-      const updated = await updateProject(editingProject.id, input);
-      setProjects((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+      await updateProject(editingProject.id, input);
     } else {
-      const created = await createProject(input);
-      setProjects((prev) => [created, ...prev]);
+      await createProject(input);
     }
+    await refreshProjects();
     closeModal();
   };
 
   const handleDelete = async (project: Project) => {
     await deleteProject(project.id);
-    setProjects((prev) => prev.filter((p) => p.id !== project.id));
+    await refreshProjects();
     closeModal();
   };
 

@@ -20,7 +20,7 @@ export function ProjectCard({ project, onEdit }: ProjectCardProps) {
 
   return (
     <main>
-      <article className="cir-stat">
+      <article className="cir-stat" style={{ cursor: 'pointer' }} onClick={() => router.push(`/projects/${project.id}`)}>
         <header className="cir-stat__head">
           <span className="cir-stat__label">
             <span

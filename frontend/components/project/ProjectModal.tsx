@@ -126,8 +126,19 @@ export function ProjectModal({ teamId, project, onSubmit, onDelete, onCancel }: 
               </p>
             </div>
 
-            <button type="submit" className="cir-search__kbd project-modal-btn">ADD</button>
+            <button type="submit" className="cir-search__kbd project-modal-btn">
+              {project ? 'UPDATE' : 'ADD'}
+            </button>
             <button type="button" onClick={onCancel} className="cir-search__kbd project-modal-btn margin-bottom-20 cancel-btn">CANCEL</button>
+            {project && onDelete && (
+              <button
+                type="button"
+                onClick={() => onDelete(project)}
+                className="cir-search__kbd project-modal-btn margin-bottom-20 task-form-delete"
+              >
+                DELETE
+              </button>
+            )}
           </div>
         </form>
       </div>

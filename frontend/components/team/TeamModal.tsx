@@ -80,9 +80,27 @@ export function TeamModal({ team, onSubmit, onDelete, onCancel }: TeamModalProps
               </p>
             </div>
             <div className="cir-note__act">
-              {/* <button className="cir-note__btn cir-note__btn--primary" type="button">
-                Send
-              </button> */}
+              {team && onDelete && (
+                <button
+                  className="cir-note__close cir-note__delete"
+                  type="button"
+                  aria-label="Delete"
+                  onClick={() => onDelete(team)}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 6h18"></path>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                  </svg>
+                </button>
+              )}
               <button className="cir-note__close" type="button" aria-label="Dismiss" onClick={onCancel}>
                 <svg
                   viewBox="0 0 24 24"

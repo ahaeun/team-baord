@@ -485,6 +485,15 @@ body {
   height: 14px;
 }
 
+.cir-note__delete {
+  color: #dc2626;
+}
+
+.cir-note__delete:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
 /* From Uiverse.io by uiverse-astronaut */ 
 @import url("s://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
@@ -692,6 +701,14 @@ body {
   margin-top: 20px !important;
 }
 
+.margin-bottom-10 {
+  margin-bottom: 10px !important;
+}
+
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
 /* From Uiverse.io by uiverse-astronaut */ 
 @import url("s://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 
@@ -762,4 +779,11 @@ input[type="date"] {
   border: none;
   width: 100%;
   color: gray;
+}
+
+.textarea {
+  min-height: 150px !important;
+  border-radius: 10px;
+  padding: 5px;
+  resize: none;
 }

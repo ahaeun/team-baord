@@ -10,26 +10,26 @@ export class TaskController {
 
   @Post()
   create(@Body() dto: CreateTaskDto) {
-    // TODO: implement
+    return this.taskService.create(dto);
   }
 
   @Get()
   findByProject(@Query('projectId') projectId: string) {
-    // TODO: implement
+    return this.taskService.findAllByProject(projectId);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: UpdateTaskDto) {
-    // TODO: implement
+    return this.taskService.update(id, dto);
   }
 
   @Patch(':id/status')
   updateStatus(@Param('id') id: string, @Body() dto: UpdateTaskStatusDto) {
-    // TODO: implement
+    return this.taskService.updateStatus(id, dto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    // TODO: implement
+    return this.taskService.remove(id);
   }
 }
